@@ -26,7 +26,7 @@ router.get('/quotes/character/:character', async(req, res) =>{
 
     const regExpression = new RegExp(character, 'i');
     const regexfilter = {"character": {$regex: regExpression}};
-    const quotes = await Quote.find(filter);
+    const quotes = await Quote.find(regexfilter);
     console.log(quotes);
     res.json(quotes);
 });
