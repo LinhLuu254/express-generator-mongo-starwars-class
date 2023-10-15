@@ -7,7 +7,7 @@ const Quote = mongoose.model('quotes');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   const filter = {};
-  const quotes = await Quote.find();
+  const quotes = await Quote.find(filter);
   console.log(quotes)
   res.render('index', { title: 'Star Wars Quotes', quotes: quotes });
 });
